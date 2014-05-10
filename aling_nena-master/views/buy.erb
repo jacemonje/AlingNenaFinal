@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Buy : Aling Nena </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/admin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index">Aling Nena</a>
+          <a class="navbar-brand" href="/products">Products</a>
+          <a class="navbar-brand" href="/about">About us</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container"> 
+      <br>
+
+      <p style="font-family:segoe;color:black;font-size:20px;">
+      Item ID: (<%= @product.id %>)
+
+      <br>
+      <%= @product.name %>      
+      <br>
+      Price: ₱<%= @product.price %>
+
+      <form method="POST" action="/checkout/<%= @product.id %>">
+        <p style="font-family:segoe;color:black;font-size:20px;">
+        <label>Quantity</label>
+        <input name="qty" type="text"/>
+        <br><br>
+        <label>₱1</label>
+        <input name="piso" type="text"/>
+        <br>
+        <label>₱5</label>
+        <input name="singko" type="text"/>
+        <br>
+        <label>₱10</label>
+        <input name="dyis" type="text"/>
+        <br>
+        <label>₱20</label>
+        <input name="bente" type="text"/>
+        <br>
+        <label>₱50</label>
+        <input name="singkwenta" type="text"/>
+        <br>
+        <label>₱100</label>
+        <input name="isandaan" type="text"/>
+        <br>
+        <label>₱500</label>
+        <input name="ninoy" type="text"/>
+        <br>
+        <label>₱1000</label>
+        <input name="isanlibo" type="text"/>
+        <br>
+        <br>
+
+        <input type="submit" value="Buy" method="POST" action="/checkout/<%= @product.id %>"/>
+      </form>
+
+
+      </p>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
